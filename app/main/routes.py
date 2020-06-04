@@ -20,7 +20,7 @@ def index():
 
 
 @bp.route('/login')
-@auth.oidc_auth('okta')     # must match with provider name in provider.json!
+@auth.oidc_auth('default')     # must match with provider name in provider.json!
 def login():
     user_session = UserSession(session)
     user_session.update(access_token=user_session.access_token,
