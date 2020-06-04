@@ -32,6 +32,12 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="{{ url_for('main.index') }}">Home</a>
+            {% if authorized %}
+                <a class="navbar-brand" href="{{ url_for('main.profile') }}">Profile</a>
+                <a class="navbar-brand" href="{{ url_for('main.logout') }}">Logout</a>
+            {% else %}
+                <a class="navbar-brand" href="{{ url_for('main.login') }}">Login</a>
+            {% endif %}
         </div>
     </div>
 </nav>
